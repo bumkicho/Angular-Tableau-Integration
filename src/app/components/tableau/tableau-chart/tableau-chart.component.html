@@ -5,8 +5,8 @@
 
 -->
 <p></p>
-<div id="chartUrl">{{chart?.url}}</div>
+<div id="chartUrl">{{ chart?.url }}</div>
 <p></p>
 <ng-container *ngFor="let hack of [chart]">
-    <ngx-tableau *ngIf="hack" tableauVizUrl="{{hack.url}}"></ngx-tableau>
+  <ngx-tableau *ngIf="hack" tableauVizUrl="{{ hack.url }}"></ngx-tableau>
 </ng-container>

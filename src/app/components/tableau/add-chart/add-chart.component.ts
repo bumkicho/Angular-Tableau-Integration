@@ -1,38 +1,35 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { TableauChart } from 'src/TableauChart';
+import { Component, OnInit, Output, EventEmitter } from "@angular/core";
+import { TableauChart } from "src/TableauChart";
 
 @Component({
-  selector: 'app-add-chart',
-  templateUrl: './add-chart.component.html',
-  styleUrls: ['./add-chart.component.css']
+  selector: "app-add-chart",
+  templateUrl: "./add-chart.component.html",
+  styleUrls: ["./add-chart.component.css"],
 })
 export class AddChartComponent implements OnInit {
-
   @Output() addChartEmitter: EventEmitter<TableauChart> = new EventEmitter();
-  
+
   description: string;
   url: string;
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   onSubmit() {
     if (!this.url) {
-      alert('please add a url');
+      alert("please add a url");
       return;
     }
 
     const newChart = {
       url: this.url,
-      description: this.description
-    }
+      description: this.description,
+    };
 
     this.addChartEmitter.emit(newChart);
 
-    this.url = '';
-    this.description = '';
+    this.url = "";
+    this.description = "";
   }
-
 }

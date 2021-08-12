@@ -1,5 +1,5 @@
 export interface TableauChart {
-    id?: number;
-    url: string;
-    description: string;
+  id?: number;
+  url: string;
+  description: string;
 }

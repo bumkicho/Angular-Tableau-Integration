@@ -10,8 +10,15 @@
 <app-add-chart (addChartEmitter)="addChart($event)"></app-add-chart>
 -->
 <div class="container">
-  <select class="form-select" [(ngModel)]="tableauChartID" id="chartOptions" (change)="selectChart()">
-    <option *ngFor="let ch of charts;let i = index" value="{{ch.id}}">{{ch.description}}</option>
+  <select
+    class="form-select"
+    [(ngModel)]="tableauChartID"
+    id="chartOptions"
+    (change)="selectChart()"
+  >
+    <option *ngFor="let ch of charts; let i = index" value="{{ ch.id }}">
+      {{ ch.description }}
+    </option>
   </select>
 </div>
 
@@ -23,7 +30,7 @@
   <app-tableau-table></app-tableau-table>
 </div>
 
-<hr>
+<hr />
 
 <div class="container" *ngIf="show()">
   <app-tableau-chart [chart]="chart"></app-tableau-chart>

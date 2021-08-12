@@ -1,16 +1,15 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from "@angular/core/testing";
 
-import { TableauChartComponent } from './tableau-chart.component';
+import { TableauChartComponent } from "./tableau-chart.component";
 
-describe('TableauChartComponent', () => {
+describe("TableauChartComponent", () => {
   let component: TableauChartComponent;
   let fixture: ComponentFixture<TableauChartComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ TableauChartComponent ]
-    })
-    .compileComponents();
+      declarations: [TableauChartComponent],
+    }).compileComponents();
   }));
 
   beforeEach(() => {
@@ -19,7 +18,7 @@ describe('TableauChartComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
 });

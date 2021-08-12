@@ -1,11 +1,11 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { TableauService } from '../../services/tableau.service';
-import { TableauChart } from '../../../TableauChart';
+import { Component, OnInit, Output, EventEmitter } from "@angular/core";
+import { TableauService } from "../../services/tableau.service";
+import { TableauChart } from "../../../TableauChart";
 
 @Component({
-  selector: 'app-tableau',
-  templateUrl: './tableau.component.html',
-  styleUrls: ['./tableau.component.css']
+  selector: "app-tableau",
+  templateUrl: "./tableau.component.html",
+  styleUrls: ["./tableau.component.css"],
 })
 export class TableauComponent implements OnInit {
   @Output() loadChartEmitter: EventEmitter<TableauChart> = new EventEmitter();
@@ -15,13 +15,13 @@ export class TableauComponent implements OnInit {
   chart: TableauChart;
   tableauChartID: number;
 
-  constructor(private tableauService: TableauService) {
-
-  }
+  constructor(private tableauService: TableauService) {}
 
   ngOnInit(): void {
     this.tableauChartID = 1; // default
-    this.tableauService.getCharts().subscribe((charts) => this.setCharts(charts));
+    this.tableauService
+      .getCharts()
+      .subscribe((charts) => this.setCharts(charts));
   }
 
   show(): boolean {
@@ -32,7 +32,7 @@ export class TableauComponent implements OnInit {
   }
 
   setCharts(tCharts: TableauChart[]) {
-    tCharts.forEach(element => {
+    tCharts.forEach((element) => {
       this.charts.push(element);
     });
 
@@ -43,10 +43,10 @@ export class TableauComponent implements OnInit {
   getChartUrl(idx: number): string {
     if (this.charts.length > 0) {
       // this.charts.filter(c => console.log(c.id));
-      this.chart = this.charts.filter(c => c.id === idx)[0];
-      return this.charts.filter(c => c.id === idx)[0].url;
+      this.chart = this.charts.filter((c) => c.id === idx)[0];
+      return this.charts.filter((c) => c.id === idx)[0].url;
     }
-    return '';
+    return "";
   }
 
   selectChart(): void {
@@ -57,7 +57,8 @@ export class TableauComponent implements OnInit {
 
   addChart(chart: TableauChart): void {
     console.log(chart);
-    this.tableauService.addChart(chart).subscribe((chart) => this.charts.push(chart));
+    this.tableauService
+      .addChart(chart)
+      .subscribe((chart) => this.charts.push(chart));
   }
-
 }

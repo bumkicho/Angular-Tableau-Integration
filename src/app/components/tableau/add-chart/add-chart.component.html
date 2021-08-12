@@ -1,14 +1,28 @@
 <div class="container">
-<form (ngSubmit)="onSubmit()">
+  <form (ngSubmit)="onSubmit()">
     <div class="me-auto, mb-3">
-        <label for="text">Link</label>
-        <input class="form-control" type="text" name="url" id="url" placeholder="Add Chart URL" [(ngModel)]="url" />
+      <label for="text">Link</label>
+      <input
+        class="form-control"
+        type="text"
+        name="url"
+        id="url"
+        placeholder="Add Chart URL"
+        [(ngModel)]="url"
+      />
     </div>
     <div class="me-auto, mb-3">
-        <label for="text">Description</label>
-        <input class="form-control" type="text" name="description" id="description" placeholder="Add Description" [(ngModel)]="description" />
+      <label for="text">Description</label>
+      <input
+        class="form-control"
+        type="text"
+        name="description"
+        id="description"
+        placeholder="Add Description"
+        [(ngModel)]="description"
+      />
     </div>
     <button type="submit" class="btn btn-primary">Add Chart</button>
     <!-- <input type="submit" value="Save Chart" /> -->
-</form>
+  </form>
 </div>
