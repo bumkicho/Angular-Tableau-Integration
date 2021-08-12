@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import {map} from 'rxjs/operators';
 import { TableauChart } from 'src/TableauChart';
 
 // httpOptions could be used in the future.
@@ -16,12 +17,12 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class TableauService {
-  private jsonUrl: string = 'http://localhost:5000/charts';
+  private jsonUrl: string = 'http://localhost:4200/assets/tableauCharts.json';
 
   constructor(private httpClient: HttpClient) { }
 
   getCharts(): Observable<TableauChart[]> {
-    const tableauCharts = this.httpClient.get<TableauChart[]>(this.jsonUrl);
+    const tableauCharts = this.httpClient.get(this.jsonUrl).pipe(map((body: any): TableauChart[] => body.charts));
     return tableauCharts;
   }
   
