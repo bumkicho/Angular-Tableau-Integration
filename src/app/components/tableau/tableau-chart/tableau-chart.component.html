@@ -1,0 +1,12 @@
+<!--
+    <p *ngIf="!chart.show()">Loading without...</p>
+<p *ngIf="chart.show()">Loading with...{{chart.tableauChartUrl}}</p>
+<div *ngIf="chart.show()"><ngx-tableau tableauVizUrl="{{chart.tableauChartUrl}}"></ngx-tableau></div>
+
+-->
+<p></p>
+<div id="chartUrl">{{chart.url}}</div>
+<p></p>
+<div>
+    <ngx-tableau tableauVizUrl="{{chart.url}}"></ngx-tableau>
+</div>

@@ -1,0 +1,34 @@
+{
+  "charts": [
+    {
+      "id": 1,
+      "url": "https://public.tableau.com/views/2018WorldCupworkbook/2018-Argentina-Brazil",
+      "description": "2018 Worldcup"
+    },
+    {
+      "id": 2,
+      "url": "https://public.tableau.com/views/MeltingGlacierintheGlacierNationalPark",
+      "description": "This is broken Tableau Link"
+    },
+    {
+      "id": 3,
+      "url": "https://public.tableau.com/views/HurricaneMichaelPowerOutages/Outages",
+      "description": "Hurricane Power Outages"
+    },
+    {
+      "url": "http://validate.url",
+      "description": "Wonder if it will",
+      "id": 4
+    },
+    {
+      "url": "http://hope.safety.org",
+      "description": "hope safety chart",
+      "id": 5
+    },
+    {
+      "url": "http://codewars.com",
+      "description": "Code Wars chart",
+      "id": 6
+    }
+  ]
+}

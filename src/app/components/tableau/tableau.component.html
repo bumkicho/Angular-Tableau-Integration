@@ -1,0 +1,40 @@
+<!-- 
+<form (ngSubmit)="onSubmit()">
+    <div>
+		<input type="text" name="position" id="position" placeholder="Enter Position" />
+    </div>
+
+	<input type="submit" value="FILTER" />
+</form>
+
+<app-add-chart (addChartEmitter)="addChart($event)"></app-add-chart>
+-->
+<div class="container">
+  <select class="form-select" [(ngModel)]="tableauChartID" id="chartOptions" (change)="selectChart()">
+    <option *ngFor="let ch of charts;let i = index" value="{{ch.id}}">{{ch.description}}</option>
+  </select>
+</div>
+
+<div>
+  <app-add-chart (addChartEmitter)="addChart($event)"></app-add-chart>
+</div>
+
+<div class="container">
+  <app-tableau-table></app-tableau-table>
+</div>
+
+<div class="container" *ngIf="show()">
+  <app-tableau-chart [chart]="chart"></app-tableau-chart>
+</div>
+
+<!--
+<ngx-tableau
+  tableauVizUrl=" https://public.tableau.com/views/HurricaneMichaelPowerOutages/Outages"></ngx-tableau>
+-->
+
+<!-- this filter does not appear to work
+<ngx-tableau
+  tableauVizUrl="https://public.tableau.com/views/SuperSampleSuperstore/SuperDescriptive"
+  filters="{ Parameter3: 'US' }"
+></ngx-tableau>
+ -->
