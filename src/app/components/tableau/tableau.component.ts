@@ -9,6 +9,7 @@ import { TableauChart } from '../../../TableauChart';
 })
 export class TableauComponent implements OnInit {
   @Output() loadChartEmitter: EventEmitter<TableauChart> = new EventEmitter();
+  @Output() loadChartsEmitter: EventEmitter<TableauChart[]> = new EventEmitter();
 
   charts: TableauChart[] = [];
   tableauChartUrl: string;
@@ -37,7 +38,6 @@ export class TableauComponent implements OnInit {
     });
 
     this.tableauChartUrl = this.getChartUrl(this.tableauChartID);
-    this.loadChartEmitter.emit(this.chart);
   }
 
   getChartUrl(idx: number): string {
@@ -58,6 +58,7 @@ export class TableauComponent implements OnInit {
   addChart(chart: TableauChart): void {
     console.log(chart);
     this.tableauService.addChart(chart).subscribe((chart) => this.charts.push(chart));
+    this.loadChartsEmitter.emit(this.charts);
   }
 
 }

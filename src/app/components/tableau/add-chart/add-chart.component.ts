@@ -9,7 +9,7 @@ import { TableauChart } from 'src/TableauChart';
 export class AddChartComponent implements OnInit {
 
   @Output() addChartEmitter: EventEmitter<TableauChart> = new EventEmitter();
-  
+
   description: string;
   url: string;
 
