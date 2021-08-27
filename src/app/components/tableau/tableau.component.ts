@@ -59,6 +59,7 @@ export class TableauComponent implements OnInit {
     console.log(chart);
     this.tableauService.addChart(chart).subscribe((chart) => this.charts.push(chart));
     this.loadChartsEmitter.emit(this.charts);
+    console.log('emit charts output');
   }
 
 }

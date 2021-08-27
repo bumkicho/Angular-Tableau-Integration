@@ -1,27 +1,33 @@
 <!-- 
-<form (ngSubmit)="onSubmit()">
-    <div>
-		<input type="text" name="position" id="position" placeholder="Enter Position" />
-    </div>
-
-	<input type="submit" value="FILTER" />
-</form>
-
-<app-add-chart (addChartEmitter)="addChart($event)"></app-add-chart>
--->
 <div class="container">
-  <select class="form-select" [(ngModel)]="tableauChartID" id="chartOptions" (change)="selectChart()">
+<mat-form-field>
+  <mat-select [(ngModel)]="tableauChartID" id="chartOptions" (selectionChange)="selectChart()">
+    <mat-option *ngFor="let ch of charts;let i = index" value="{{ch.id}}">{{ch.description}}</mat-option>
+  </mat-select>
+</mat-form-field>
+</div>
+-->
+
+<div class="container">
+  <h2>Kafka consumer chart</h2>
+  <select placeholder="select a chart" class="form-select" [(ngModel)]="tableauChartID" id="chartOptions" (change)="selectChart()">
     <option *ngFor="let ch of charts;let i = index" value="{{ch.id}}">{{ch.description}}</option>
   </select>
 </div>
 
-<div>
+<div class="container">
   <app-add-chart (addChartEmitter)="addChart($event)"></app-add-chart>
+</div>
+
+<!-- 
+<div class="container">
+  <app-tableau-table-material></app-tableau-table-material>
 </div>
 
 <div class="container">
   <app-tableau-table></app-tableau-table>
 </div>
+-->
 
 <div class="container" *ngIf="show()">
   <app-tableau-chart [chart]="chart"></app-tableau-chart>
