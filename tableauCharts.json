@@ -11,14 +11,9 @@
       "description": "Hurricane Power Outages"
     },
     {
-      "url": "http://validate.url",
-      "description": "test",
+      "url": "http://hope.safety.org",
+      "description": "hope safety chart",
       "id": 3
-    },
-    {
-      "url": "http://codewars.com",
-      "description": "Code Wars chart",
-      "id": 4
     }
   ]
 }
